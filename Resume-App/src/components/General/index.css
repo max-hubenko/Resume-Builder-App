@@ -1,0 +1,39 @@
+
+.general-container {
+    background-color: #64748b;
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.general-form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    width: 90%;
+    align-self: center;
+    margin: 0;
+    padding: 5px;
+}
+span {
+    align-self: center;
+    width: 90%;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-span {
+    display: flex;
+    align-items: center;
+}
+.submit-button {
+    border-radius: 5px;
+    border-style: none;
+    justify-self: center;
+    width: 30%;
+}
