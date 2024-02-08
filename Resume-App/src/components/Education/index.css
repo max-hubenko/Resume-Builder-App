@@ -1,0 +1,13 @@
+.general-container {
+    margin: 5px;
+}
+
+.button-span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-span button {
+    margin: 0 5px;
+}

@@ -18,7 +18,7 @@ function General() {
                     <input type='tel'></input>
                 </span>
                 <span>
-                    <label>Address</label>
+                    <label>Location</label>
                     <input type='text'></input>
                 </span>
                 <span className='submit-span'>

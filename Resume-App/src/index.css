@@ -2,4 +2,18 @@
   background-color: #0f172a;
   color: white;
   font-family: "Roboto Condensed";
+  margin: 15px;
+}
+
+.main-container {
+  padding: 5px;
+  display: flex;
+}
+
+.left-container {
+  flex-grow: 1;
+}
+
+.right-container {
+  flex-grow: 4;
 }

@@ -1,25 +1,25 @@
 import './index.css'
 
-function Education() {
+function Experience() {
     return (
         <div className='general-container'>
-            <h1>Education</h1>
+            <h1>Experience</h1>
             <form className='general-form'>
                 <span>
-                    <label>University</label>
+                    <label>Job Title</label>
                     <input type='text' name='University'></input>
                 </span>
                 <span>
-                    <label>Degree</label>
+                    <label>Company</label>
                     <input type='text' name='Degree'></input>
                 </span>
                 <span>
-                    <label>Degree level</label>
-                    <input type='text' name='Degree'></input>
+                    <label>Start Date</label>
+                    <input type='date' name='Degree'></input>
                 </span>
                 <span>
-                    <label>Graduation Year</label>
-                    <input type='number' name='University'></input>
+                    <label>End Date</label>
+                    <input type='date' name='University'></input>
                 </span>
                 <span className='button-span'>
                     <button className='submit-button'>Add</button>
@@ -31,4 +31,4 @@ function Education() {
 } 
 
 
-export default Education
+export default Experience
