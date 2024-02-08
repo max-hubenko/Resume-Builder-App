@@ -21,6 +21,10 @@ function Experience() {
                     <label>End Date</label>
                     <input type='date' name='University'></input>
                 </span>
+                <span>
+                    <label>Job Description</label>
+                    <input type='text' name='job-desc'></input>
+                </span>
                 <span className='button-span'>
                     <button className='submit-button'>Add</button>
                     <button className='submit-button'>Remove</button>

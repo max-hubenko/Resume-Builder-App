@@ -5,6 +5,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 .general-form {
