@@ -1,45 +1,22 @@
+/* eslint-disable react/prop-types */
+import EducationPreview from "./EducationPreview"
+import ExperiencePreview from "./ExperiencePreview"
+import Header from "./Header"
 import "./index.css"
 
-function Preview() {
+
+
+// eslint-disable-next-line react/prop-types
+function Preview({data}) {
+
     return (
         <div className="preview-container">
             <div className="resume-page">
-                <h1 className="name"> Johnny Appleseed</h1>
-                <div className="subheading">
-                    <h3>email@email.com</h3>
-                    <h3>♦</h3>
-                    <h3>630-400-4000</h3>
-                    <h3>♦</h3>
-                    <h3>Aurora, IL</h3>
-                </div>
+                <Header fullname={data.general.fullname} email={data.general.email} phone={data.general.phone} address={data.general.address} />
                 <div className="section-container">
-                    <div className="top-section">
-                        <h3 className="section-header">EDUCATION</h3>
-                        <hr className="divider"></hr>
-                        <div className="section">
-                            <span className="uni">
-                                <p className="college">Wisconsin-Madison</p>
-                                <p className="degree"> Bachelor of Arts in Computer Science </p>
-                            </span>
-                            
-                            <p>May 2026</p>
-                        </div>
-                    </div>
-                    <div className="bottom-section"> 
-                        <h3 className="section-header">EXPERIENCE</h3>
-                        <hr className="divider"></hr>
-                        <div className="section">
-                            <span className="job">
-                                <p className="job-title">Software Engineer</p>
-                                <p className="company"> Google </p>
-                            </span>
-                            <p>June 2026 - Current</p>
-                        </div>
-                        <li className="job-desc"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quam. Iure sunt, at quibusdam atque animi accusantium nisi voluptatum commodi, saepe quis similique error architecto perspiciatis corporis itaque pariatur eveniet.</li>
-                    </div>
-                
+                    <EducationPreview university={data.education.university} gradyear={data.education.gradyear} degree={data.education.degree} degreelevel={data.education.degreelevel}/>
+                    <ExperiencePreview job={data.experience.job} startdate={data.experience.startdate} enddate={data.experience.enddate} jobdesc={data.experience.jobdesc}/>
                 </div>
-
             </div>
         </div>
     )
