@@ -89,3 +89,15 @@
     font-size: small;
     margin-left: 5px;
 }
+
+.EducationList {
+    padding: 0;
+    padding-left: 0;
+    margin: 0;
+}
+
+.work-list {
+    padding: 0;
+    padding-left: 0;
+    margin: 0;
+}

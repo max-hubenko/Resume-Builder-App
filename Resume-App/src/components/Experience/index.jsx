@@ -2,18 +2,29 @@
 import './index.css'
 
 function Experience({onDataSubmit}) {
-    const submitForm = (e) => {
-        e.preventDefault()
+    const submitFormAdd = (e) => {
+        e.preventDefault();
 
-        const formData = new FormData(e.target)
-        const payload = Object.fromEntries(formData)
+        const formData = new FormData(document.getElementById("experience-form"));
+        const payload = Object.fromEntries(formData);
+        if (payload.job != "" && payload.company != "" && payload.startdate != "" && payload.enddate != "") {
+            onDataSubmit("add", payload);
+            document.getElementById("experience-form").reset()
+        }
 
-        onDataSubmit(payload)
+    }
+
+    const submitFormRemove = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(document.getElementById("experience-form"));
+        const payload = Object.fromEntries(formData);
+        onDataSubmit("remove", payload);
     }
     return (
         <div className='general-container'>
             <h1>Experience</h1>
-            <form onSubmit={submitForm} className='general-form'>
+            <form className='general-form' id="experience-form">
                 <span>
                     <label>Job Title</label>
                     <input type='text' name='job'></input>
@@ -35,8 +46,8 @@ function Experience({onDataSubmit}) {
                     <input type='text' name='jobdesc'></input>
                 </span>
                 <span className='button-span'>
-                    <button type="submit" className='submit-button'>Add</button>
-                    <button className='submit-button'>Remove</button>
+                    <button onClick={submitFormAdd} type="submit" name="submitAction" value="add" className='submit-button'>Add</button>
+                    <button onClick={submitFormRemove} name="submitAction" value="remove" className='submit-button'>Remove</button>
                 </span>
             </form>
         </div>

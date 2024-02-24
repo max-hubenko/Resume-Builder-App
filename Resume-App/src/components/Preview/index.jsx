@@ -7,15 +7,14 @@ import "./index.css"
 
 
 // eslint-disable-next-line react/prop-types
-function Preview({data}) {
-
+function Preview({educationArray, workArray, generalData}) {
     return (
         <div className="preview-container">
             <div className="resume-page">
-                <Header fullname={data.general.fullname} email={data.general.email} phone={data.general.phone} address={data.general.address} />
+                <Header fullname={generalData.fullname} email={generalData.email} phone={generalData.phone} address={generalData.address} />
                 <div className="section-container">
-                    <EducationPreview university={data.education.university} gradyear={data.education.gradyear} degree={data.education.degree} degreelevel={data.education.degreelevel}/>
-                    <ExperiencePreview job={data.experience.job} startdate={data.experience.startdate} enddate={data.experience.enddate} jobdesc={data.experience.jobdesc}/>
+                    <EducationPreview educationArray={educationArray}/>
+                    <ExperiencePreview workArray={workArray}/>
                 </div>
             </div>
         </div>

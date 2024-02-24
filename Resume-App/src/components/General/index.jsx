@@ -6,7 +6,9 @@ function General({onDataSubmit}) {
         e.preventDefault()
         const formData = new FormData(e.target)
         const payload = Object.fromEntries(formData)
+        console.log(payload)
         onDataSubmit(payload);
+        e.target.reset();
     }
     return (
         <div className='general-container'>
@@ -14,22 +16,22 @@ function General({onDataSubmit}) {
             <form onSubmit={submitForm} className='general-form'>
                 <span>
                     <label>Full Name</label>
-                    <input type='text' name='fullname'></input>
+                    <input required type='text' name='fullname'></input>
                 </span>
                 <span>
                     <label>Email</label>
-                    <input type='email' name="email"></input>
+                    <input required type='email' name="email"></input>
                 </span>
                 <span>
                     <label>Phone Number</label>
-                    <input type='tel' name="phone"></input>
+                    <input required type='tel' name="phone"></input>
                 </span>
                 <span>
                     <label>Location</label>
-                    <input type='text' name="address"></input>
+                    <input required type='text' name="address"></input>
                 </span>
                 <span className='submit-span'>
-                    <input className='submit-button' type='submit'></input>
+                    <input required className='submit-button' type='submit'></input>
                 </span>
             </form>
         </div>

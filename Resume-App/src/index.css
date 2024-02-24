@@ -3,6 +3,8 @@
   color: white;
   font-family: "Roboto Condensed";
   margin: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .main-container {
@@ -11,17 +13,22 @@
   padding: 5px;
   display: flex;
   scale: 0.95;
+  max-width: 925px;
+  align-self: center;
 }
 
 .left-container {
   margin: 3px;
-  flex-grow: 1;
+  flex-grow: 2;
+  min-width: 225px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+
 }
 
 .right-container {
   margin: 3px;
-  flex-grow: 2;
+  flex-grow: 3;
+  min-width: 700px; 
 }

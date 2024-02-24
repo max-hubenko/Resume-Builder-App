@@ -2,18 +2,29 @@
 import './index.css'
 
 function Education({onDataSubmit}) {
-    const submitForm = (e) => {
+    const submitFormAdd = (e) => {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
+        const formData = new FormData(document.getElementById("education-form"));
         const payload = Object.fromEntries(formData);
+        if (payload.university != "" && payload.degree != "" && payload.degreelevel != "" && payload.gradyear != "") {
+            onDataSubmit("add", payload);
+            document.getElementById("education-form").reset()
+        }
 
-        onDataSubmit(payload);
+    }
+
+    const submitFormRemove = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(document.getElementById("education-form"));
+        const payload = Object.fromEntries(formData);
+        onDataSubmit("remove", payload);
     }
     return (
         <div className='general-container'>
             <h1>Education</h1>
-            <form onSubmit={submitForm}className='general-form'>
+            <form className='general-form' id="education-form">
                 <span>
                     <label>University</label>
                     <input type='text' name='university'></input>
@@ -31,8 +42,8 @@ function Education({onDataSubmit}) {
                     <input type='number' name='gradyear'></input>
                 </span>
                 <span className='button-span'>
-                    <button type="submit" className='submit-button'>Add</button>
-                    <button className='submit-button'>Remove</button>
+                    <button onClick={submitFormAdd} className='submit-button'>Add</button>
+                    <button onClick={submitFormRemove} name="submitAction" value="remove" className='submit-button'>Remove</button>
                 </span>
             </form>
         </div>
